@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: fct_orders_ml
+    description: "Dataset limpo e sem nulos para treinamento de ML."
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: time_takenmin
+        data_tests:
+          - not_null
+
+      - name: delivery_person_age
+        data_tests:
+          - not_null
+
+      - name: time_orderd  # Nome exato da sua lista
+        data_tests:
+          - not_null
+
+      - name: city
+        data_tests:
+          - not_null
+
+      - name: multiple_deliveries
+        data_tests:
+          - not_null
+
+      - name: weatherconditions
+        data_tests:
+          - not_null
+
+      - name: road_traffic_density
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Low', 'Medium', 'High', 'Jam']
+
+      - name: festival
+        data_tests:
+          - not_null
+
+      - name: vehicle_condition
+        data_tests:
+          - not_null
+
+      - name: type_of_order
+        data_tests:
+          - not_null
+
+      - name: time_order_picked
+        data_tests:
+          - not_null
+
+      - name: type_of_vehicle
+        data_tests:
+          - not_null
+
+      - name: distance_km
+        data_tests:
+          - not_null

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Tabela fato de pedidos da Curry Company com métricas de distância calculadas."
+    columns:
+      - name: order_id
+        description: "ID único do pedido."
+        tests:
+          - unique    # Garante que não há IDs duplicados
+          - not_null  # Garante que todo pedido tem um ID
+
+      - name: distance_km
+        description: "Distância calculada entre o restaurante e a entrega."
+        tests:
+          - not_null
+          # Teste customizado: a distância não pode ser negativa
+          - dbt_utils.accepted_range:
+              min_value: 0
+              inclusive: true
+
+      - name: delivery_person_age
+        description: "Idade do entregador."
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 14
+              max_value: 100

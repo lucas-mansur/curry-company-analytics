@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: gcp_raw # Nome amigável para a fonte
+    database: curry-company-494501
+    schema: curry_company
+    tables:
+      - name: orders_cleaned # A tabela que você subiu via Python

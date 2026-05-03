@@ -1,0 +1,9 @@
+data/ 
+.venv/ 
+__pycache__/ 
+*.ipynb_checkpoints/ 
+.env
+
+curry_company_dbt/logs/
+curry_company_dbt/target/
+curry_company_dbt/dbt_packages/
