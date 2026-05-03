@@ -34,6 +34,8 @@ select
         multiple_deliveries,
         festival,
         city,
+        is_india_delivery,
+        is_india_restaurant
 
 
     from source
