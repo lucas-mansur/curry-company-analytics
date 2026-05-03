@@ -1,9 +1,59 @@
-data/ 
-.venv/ 
-__pycache__/ 
-*.ipynb_checkpoints/ 
+# ==============================================================================
+# SEGURANÇA E CREDENCIAIS (CRÍTICO)
+# ==============================================================================
+# Nunca versionar chaves de Service Accounts ou segredos de ambiente.
+*.json
 .env
+.env.*
+secrets/
+credentials/
+auth/
 
-curry_company_dbt/logs/
+# ==============================================================================
+# AMBIENTE DE DESENVOLVIMENTO (PYTHON/POETRY)
+# ==============================================================================
+# Exclui ambientes virtuais e metadados de pacotes.
+.venv/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# ==============================================================================
+# ANALYTICS ENGINEERING (DBT)
+# ==============================================================================
+# Logs e artefatos compilados (target) mudam a cada execução e poluem o Git.
 curry_company_dbt/target/
+curry_company_dbt/logs/
 curry_company_dbt/dbt_packages/
+curry_company_dbt/dbt_modules/
+# Configurações específicas do usuário (ex: estados de IDE ou cache local)
+.user.yml
+
+# ==============================================================================
+# DATA & NOTEBOOKS
+# ==============================================================================
+# Dados brutos devem ser ingeridos via pipeline, não via Git.
+data/
+*.csv
+*.parquet
+*.sql.gz
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ==============================================================================
+# SISTEMA OPERACIONAL & IDE
+# ==============================================================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ==============================================================================
+# INFRAESTRUTURA/CREDENCIAIS
+# ==============================================================================
+curry_company_dbt/profiles.yml
+profiles.yml
